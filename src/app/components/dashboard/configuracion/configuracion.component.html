@@ -1,0 +1,37 @@
+
+
+
+
+<mat-toolbar color="secondary">Consultas previas</mat-toolbar>
+
+<mat-table #table [dataSource]="dataSource" matSort *ngIf="dataSource.length > 0">
+	<ng-container matColumnDef="Fecha">
+		<mat-header-cell *matHeaderCellDef mat-sort-header>Fecha </mat-header-cell>
+		<mat-cell *matCellDef="let element"> {{element.Fecha}} </mat-cell>
+	</ng-container>
+
+
+	<ng-container matColumnDef="Precio">
+		<mat-header-cell *matHeaderCellDef mat-sort-header>Precio </mat-header-cell>
+		<mat-cell *matCellDef="let element"> {{element.Precio}} </mat-cell>
+	</ng-container>
+    
+	<ng-container matColumnDef="Tiempo">
+		<mat-header-cell *matHeaderCellDef mat-sort-header>Tiempo </mat-header-cell>
+		<mat-cell *matCellDef="let element"> {{element.Tiempo}} </mat-cell>
+	</ng-container>
+
+    <ng-container matColumnDef="Tasa">
+		<mat-header-cell *matHeaderCellDef mat-sort-header>Tasa </mat-header-cell>
+		<mat-cell *matCellDef="let element"> {{element.Tasa}} </mat-cell>
+	</ng-container>
+
+    
+
+
+	<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+	<mat-row *matRowDef="let row; columns: displayedColumns;" (click)="row.toggle(row)">
+	</mat-row>
+</mat-table>
+
+<div *ngIf="dataSource.length === 0">No data</div>

@@ -1,0 +1,58 @@
+<p>
+  <mat-toolbar color="primary">
+      <span>EzLeasing</span>
+      <span class="example-spacer"></span>
+  
+      <button routerLink="/login" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" >
+          <mat-icon>logout</mat-icon>
+      </button>
+  </mat-toolbar>
+  <mat-toolbar>
+
+
+      <button mat-icon-button color="secondary" aria-label="Example icon-button with heart icon" [matMenuTriggerFor]="menu">
+          <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>start</mat-icon>
+            <span>Valor del bien</span>
+          </button>
+          <button mat-menu-item >
+            <mat-icon>start</mat-icon>
+            <span>Tasas</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>start</mat-icon>
+            <span>Pagos iniciales</span>
+          </button>
+          <button mat-menu-item >
+              <mat-icon>arrow_right</mat-icon>
+              <span>Detalles Leasing</span>
+            </button>
+          
+            <button mat-menu-item >
+              <mat-icon>arrow_right</mat-icon>
+              <span>Indicadores rentabilidad</span>
+            </button>
+
+        </mat-menu>
+      
+
+
+
+      <span class="example-spacer"></span>
+      <button mat-button color="secondary" routerLink="/dashboard/inicio">Inicio</button>
+
+
+
+      <button mat-button color="secondary" routerLink="/dashboard/configuracion">Configuracion</button>
+
+      <button mat-button color="secondary" routerLink="/dashboard/resultado">Resultado</button>
+
+      <button mat-button color="secondary" routerLink="/dashboard/ayuda">Ayuda</button>
+
+      <span class="example-spacer"></span>
+  </mat-toolbar>
+
+</p>
