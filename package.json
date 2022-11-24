@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "remotelaunch" : "ng serve --host 152.67.43.35 --port 4200",
+    "remotelaunch" : "ng serve --host 0.0.0.0 --port 4200",
     "test": "ng test"
   },
   "private": true,
