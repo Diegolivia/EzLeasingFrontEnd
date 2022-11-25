@@ -149,6 +149,6 @@ export class ConfiguracionComponent implements OnInit {
     this.GrabTableData();
     console.log(this.Ldata)
     this.messageService.add(this.Ldata);
-    //this.router.navigate(['/dashboard/resultado']);
+    this.router.navigate(['/dashboard/resultado']);
   }
 }
