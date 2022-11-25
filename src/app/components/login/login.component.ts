@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
       usuario: ['', Validators.required],
       password: ['', Validators.required],
     });
-  }
+  }   
 
   ngOnInit(): void {}
   ingresar() {
