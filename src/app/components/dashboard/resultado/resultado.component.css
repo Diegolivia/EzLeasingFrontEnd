@@ -30,6 +30,7 @@ h2 {
   height: 100%;
 }
 
+
 .RowTableOrg > input {
   width: 20%;
   height: 100%;
@@ -44,10 +45,12 @@ h2 {
   width: 100%;
 }
 
+
 .RowItem > input,
 .RowItem > select {
   width: 45%;
 }
+
 
 button {
   width: 20%;
