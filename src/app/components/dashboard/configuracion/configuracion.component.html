@@ -4,26 +4,26 @@
       <h2 class="RowTitle">Valor del Bien</h2>
       <div class="RowItem">
         <h3 class="RowName">Precio de venta</h3>
-        <input type="number" matInput id="VB_PeVnt" formControlName="_VB_PeVnt" />
+        <input matInput  type="number" id="VB_PeVnt" formControlName="_VB_PeVnt" />
       </div>
       <div class="RowItem">
         <h3 class="RowName">Cuota Inicial</h3>
-        <input type="number" matInput id="VB_CoIni" formControlName="_VB_CoIni" />
+        <input matInput  type="number" id="VB_CoIni" formControlName="_VB_CoIni" />
       </div>
       <div class="RowItem">
         <h3 class="RowName">% de Recompra</h3>
-        <input type="number" matInput id="VB_PcRcp" formControlName="_VB_PcRcp" />
+        <input matInput  type="number" id="VB_PcRcp" formControlName="_VB_PcRcp" />
       </div>
     </div>
     <div class="RESBlock">
       <h2 class="RowTitle">Plazos de Pago</h2>
       <div class="RowItem">
         <h3 class="RowName">Numero de Años</h3>
-        <input type="number" matInput id="PP_NmAns" formControlName="_PP_NmAns" />
+        <input matInput  type="number" id="PP_NmAns" formControlName="_PP_NmAns" />
       </div>
       <div class="RowItem">
         <h3 class="RowName">Frecuencia de Pago</h3>
-        <input type="number" matInput id="PP_FqPag" formControlName="_PP_FqPag" />
+        <input matInput  type="number" id="PP_FqPag" formControlName="_PP_FqPag" />
       </div>
       <div class="RowItem">
         <h3 class="RowName">Nº dias por año</h3>
@@ -42,7 +42,7 @@
       </div>
       <div class="RowItem">
         <h3 class="RowName">Duracion Periodo de Gracia</h3>
-        <input type="number" matInput id="PP_PrGrc" formControlName="_PP_PrGrc" />
+        <input matInput  type="number" id="PP_PrGrc" formControlName="_PP_PrGrc" />
       </div>
     </div>
   </section>
@@ -58,42 +58,42 @@
       </div>
       <div class="RowItem">
         <h3 class="RowName">Tasa de Interes</h3>
-        <input type="number" matInput id="TX_PcInt" formControlName="_TX_PcInt" />
+        <input matInput  type="number" id="TX_PcInt" formControlName="_TX_PcInt" />
       </div>
       <div class="RowItem">
         <h3 class="RowName">Periodo de Tasa de Interes</h3>
-        <input type="number" matInput id="TX_PdInt" formControlName="_TX_PdInt" />
+        <input matInput  type="number" id="TX_PdInt" formControlName="_TX_PdInt" />
       </div>
       <div class="RowItem">
         <h3 class="RowName">Capitalizacion de Tasa de Interes</h3>
-        <input type="number" matInput id="TX_CaInt" formControlName="_TX_CaInt" />
+        <input matInput  type="number" id="TX_CaInt" formControlName="_TX_CaInt" />
       </div>
       <div class="RowItem">
         <h3 class="RowName">Tasa de Desc. Ks</h3>
-        <input type="number" matInput id="TX_DscKs" formControlName="_TX_DscKs" />
+        <input matInput  type="number" id="TX_DscKs" formControlName="_TX_DscKs" />
       </div>
       <div class="RowItem">
         <h3 class="RowName">Tasa de Desc. WACC</h3>
-        <input type="number" matInput id="TX_DscWC" formControlName="_TX_DscWC" />
+        <input matInput  type="number" id="TX_DscWC" formControlName="_TX_DscWC" />
       </div>
     </div>
     <div class="RESBlock">
       <h2 class="RowTitle">Pagos Porcentuales</h2>
       <div class="RowItem">
         <h3 class="RowName">Comision de Activacion</h3>
-        <input type="number" matInput id="PC_CmAct" formControlName="_PC_CmAct" />
+        <input matInput  type="number" id="PC_CmAct" formControlName="_PC_CmAct" />
       </div>
       <div class="RowItem">
         <h3 class="RowName">Seguro de Riesgo</h3>
-        <input type="number" matInput id="PC_PcRsk" formControlName="_PC_PcRsk" />
+        <input matInput  type="number" id="PC_PcRsk" formControlName="_PC_PcRsk" />
       </div>
       <div class="RowItem">
         <h3 class="RowName">IGV</h3>
-        <input type="number" matInput id="PC_PcIGV" formControlName="_PC_PcIGV" />
+        <input matInput  type="number" id="PC_PcIGV" formControlName="_PC_PcIGV" />
       </div>
       <div class="RowItem">
         <h3 class="RowName">Impuesto de la Renta</h3>
-        <input type="number" matInput id="PC_PcIRt" formControlName="_PC_PcIRt" />
+        <input matInput  type="number" id="PC_PcIRt" formControlName="_PC_PcIRt" />
       </div>
     </div>
   </section>
@@ -102,9 +102,9 @@
       <h2 class="RowTitle">Pagos Iniciales</h2>
       <div class="RowTableOrg">
         <h3 class="CatName">Concepto</h3>
-        <input type="text" matInput id="PI_nm" #PI_nm />
+        <input matInput  type="text" id="PI_nm" #PI_nm />
         <h3 class="CatName">Monto</h3>
-        <input type="number" matInput id="PI_cst" #PI_cst />
+        <input matInput  type="number" id="PI_cst" #PI_cst />
       </div>
       <div class="RowTableOrg">
         <button (click)="addIniData()">Agregar</button>
@@ -127,9 +127,9 @@
       <h2 class="RowTitle">Pagos Periodicos</h2>
       <div class="RowTableOrg">
         <h3 class="CatName">Concepto</h3>
-        <input type="text" matInput id="PP_nm" #PP_nm />
+        <input matInput  type="text" id="PP_nm" #PP_nm />
         <h3 class="CatName">Monto</h3>
-        <input type="number" matInput id="PP_cst" #PP_cst />
+        <input matInput  type="number" id="PP_cst" #PP_cst />
       </div>
       <div class="RowTableOrg">
         <button (click)="addPerData()">Agregar</button>

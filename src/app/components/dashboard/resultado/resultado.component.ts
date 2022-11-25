@@ -1,45 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { LeasingResult } from '../../Leasingdata';
 import { MessageService } from '../../message.service';
-
-
-const LEASING_DATA: LeasingResult[] = [
-  {
-    nCuota: 1,
-    RC_SaldIni: 101000,
-    RC_Interes: -958.3680929999999,
-    RC_Cuota: -3763.9236485555557,
-    RC_Amort: -2805.5555555555557,
-    RC_SegRsk: -29.5,
-    RC_CostPer: -20,
-    RC_Recompra: 0,
-    RC_SaldFin: 98194.44444444444,
-    RC_Deprec: -2777.777777777778,
-    RC_AhorrTrib: -1135.6937612333334,
-    RC_IGV: -686.4162567400001,
-    RC_FlujBruto: -3813.4236485555557,
-    RC_FlujIGV: -4499.839905295556,
-    RC_FlujNeto: -2677.7298873222226,
-  },
-  {
-    nCuota: 2,
-    RC_SaldIni: 98194.44444444444,
-    RC_Interes: -931.7467570833333,
-    RC_Cuota: -3737.3023126388885,
-    RC_Amort: -2805.555555555555,
-    RC_SegRsk: -29.5,
-    RC_CostPer: -20,
-    RC_Recompra: 0,
-    RC_SaldFin: 95388.88888888888,
-    RC_Deprec: -2777.777777777778,
-    RC_AhorrTrib: -1127.7073604583334,
-    RC_IGV: -681.6244162749999,
-    RC_FlujBruto: -3786.8023126388885,
-    RC_FlujIGV: -4468.426728913888,
-    RC_FlujNeto: -2659.094952180555,
-  },
-];
 
 @Component({
   selector: 'app-resultado',
@@ -76,16 +39,19 @@ export class ResultadoComponent implements OnInit {
   VAN_Bruto: number = 0;
   VAN_Neto: number = 0;
   dataSource: LeasingResult[] = [];
-  constructor(private http: HttpClient, public messageService:MessageService) {}
+  constructor(
+    private http: HttpClient,
+    public messageService: MessageService
+  ) {}
   ngOnInit(): void {
     this.loadLeasing();
   }
   loadLeasing() {
-    const url = 'http://152.67.43.35:3000/api/leasing_nosave/aleman';
-    //const url = 'http://localhost:8080/api/leasing_nosave/aleman';
-    const body = this.messageService.get()
-    console.log("Body Sent")
-    console.log(body)
+    const url = environment.apiURL + '/api/leasing_nosave/aleman';
+    console.log(url)
+    const body = this.messageService.get();
+    console.log('Body Sent');
+    console.log(body);
     const headers = new Headers({
       'Content-Type': 'application/json',
     });

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   form: FormGroup;
   loading = false;
   constructor(
@@ -20,21 +20,21 @@ export class LoginComponent implements OnInit {
     private http: HttpClient
   ) {
     this.form = this.fb.group({
-      usuario: ['', Validators.required],
+      usuario: ['',Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
 
-  ngOnInit(): void {
-  }
-  ingresar() {
+  ngOnInit(): void {}
+
+  registrar() {
     console.log(this.form);
-    const usuario = this.form.value.usuario;
-    const password = this.form.value.password;
-    const url = environment.apiURL + '/api/auth/login';
+    const url = environment.apiURL + '/api/auth/register';
     const body = {
-      username: usuario,
-      password: password,
+      username: this.form.value.usuario,
+      email: this.form.value.email,
+      password: this.form.value.password,
     };
     const headers = new Headers({
       'Content-Type': 'application/json',
@@ -46,23 +46,24 @@ export class LoginComponent implements OnInit {
         this.fakeLoading();
       })
       .catch((e) => {
-        this.error();
+        this.error(e);
         this.form.reset();
       });
   }
 
-  error() {
-    this._snackBar.open('Usuario o contraseña incorrectos', '', {
+  error(errormessage:any) {
+    console.log(errormessage.error.message);
+    this._snackBar.open(errormessage.error.message, '', {
       duration: 5000,
       horizontalPosition: 'center',
       verticalPosition: 'bottom',
     });
   }
 
-  ToRegistro(){
+  ToLogin(){
     this.loading = true;
     setTimeout(() => {
-      this.router.navigate(['registro']);
+      this.router.navigate(['login']);
     }, 500);
   }
 

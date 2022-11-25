@@ -15,17 +15,25 @@ h2 {
   margin: 0;
 }
 
+.RowTitle {
+  text-align: center;
+}
+
 .RowTableOrg {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-around;
-  height: 100%;
+  height: 10%;
 }
 
 .RowTableOrg > input {
   width: 20%;
-  height: 100%;
+  height: 20px;
+}
+.RowTableOrg > button {
+  width: 20%;
+  height: 20px;
 }
 .RowItem {
   display: flex;
@@ -37,9 +45,12 @@ h2 {
   width: 100%;
 }
 
-.RowItem > input,
-.RowItem > select {
+.RowItem > input {
   width: 45%;
+}
+
+.RowItem > select {
+  width: 46.5%;
 }
 
 button {
@@ -47,7 +58,6 @@ button {
 }
 
 h3 {
-  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
@@ -101,12 +111,13 @@ h3 {
 .RESBlock {
   box-sizing: border-box;
   width: 40%;
-  height: 100%;
+  height: 380px;
   padding: 2%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+  margin-bottom: 20px;
 
   background-color: #f0f7fb;
   border: 4px solid #7ac3f8;
