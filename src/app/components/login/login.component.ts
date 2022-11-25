@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
       usuario: ['', Validators.required],
       password: ['', Validators.required],
     });
-  }   
+  }
 
   ngOnInit(): void {
   }
@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
     console.log(this.form);
     const usuario = this.form.value.usuario;
     const password = this.form.value.password;
-    //const url = 'http://152.67.43.35:3000/api/auth/login';
-    const url = 'http://localhost:8080/api/auth/login';
+    const url = 'http://152.67.43.35:3000/api/auth/login';
+    //const url = 'http://localhost:8080/api/auth/login';
     const body = {
       username: usuario,
       password: password,

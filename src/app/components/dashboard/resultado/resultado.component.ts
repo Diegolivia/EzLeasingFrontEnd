@@ -81,8 +81,8 @@ export class ResultadoComponent implements OnInit {
     this.loadLeasing();
   }
   loadLeasing() {
-    //const url = 'http://152.67.43.35:3000/api/leasing_nosave/aleman';
-    const url = 'http://localhost:8080/api/leasing_nosave/aleman';
+    const url = 'http://152.67.43.35:3000/api/leasing_nosave/aleman';
+    //const url = 'http://localhost:8080/api/leasing_nosave/aleman';
     const body = this.messageService.get()
     console.log("Body Sent")
     console.log(body)
