@@ -1,0 +1,139 @@
+table {
+  width: 100%;
+}
+table {
+  width: 100%;
+}
+
+.RESROW {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+h2 {
+  width: 100%;
+}
+.RowName {
+  width: 40%;
+  margin: 0;
+}
+
+.RowTableOrg {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.RowTableOrg > input {
+  width: 20%;
+  height: 100%;
+}
+.RowItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 2%;
+  height: fit-content;
+  width: 100%;
+}
+
+.RowItem > input,
+.RowItem > select {
+  width: 45%;
+}
+
+button {
+  width: 20%;
+}
+
+h3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 29px;
+  /* identical to box height */
+  text-align: left;
+  color: #000000;
+}
+.RESSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  background: #ffffff;
+  height: fit-content;
+}
+.ButtonSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+#CalcularButton {
+  width: 60%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 29px;
+  text-align: center;
+  color: #000000;
+  padding: 1%;
+}
+
+.BlockTitle {
+  width: 230;
+
+  font-style: normal;
+  font-weight: 100;
+  font-size: 22px;
+  line-height: 39px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+}
+.RESBlock {
+  box-sizing: border-box;
+  width: 40%;
+  height: 100%;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+
+  background-color: #f0f7fb;
+  border: 4px solid #7ac3f8;
+  border-radius: 36px;
+}
+
+.RS_response {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+
+  width: 261px;
+  height: 47px;
+
+  background: #ffffff;
+  border-radius: 10px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+form {
+  padding-bottom: 10%;
+}

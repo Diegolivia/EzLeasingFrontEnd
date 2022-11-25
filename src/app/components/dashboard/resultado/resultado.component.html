@@ -1,1 +1,121 @@
-<p>resultado works!</p>
+<section class="RESROW">
+  <div class="RESBlock">
+    <h1 class="BlockTitle">Resultados del Arrendamiento</h1>
+    <div class="RowItem">
+      <h3 class="RowName">IGV</h3>
+      <input disabled id="RS_response" placeholder="{{ RA_MIGV }}" />
+    </div>
+    <div class="RowItem">
+      <h3 class="RowName">Valor de Venta del Activo</h3>
+      <input disabled id="RS_response" placeholder="{{ RA_VaVe }}" />
+    </div>
+    <div class="RowItem">
+      <h3 class="RowName">Monto de Leasing</h3>
+      <input disabled id="RS_response" placeholder="{{ RA_MoLe }}" />
+    </div>
+    <div class="RowItem">
+      <h3 class="RowName">Tasa Efectiva del Periodo</h3>
+      <input disabled id="RS_response" placeholder="{{ RA_PTEP }}" />
+    </div>
+    <div class="RowItem">
+      <h3 class="RowName">Nº Total de Coutas</h3>
+      <input disabled id="RS_response" placeholder="{{ RA_NCuo }}" />
+    </div>
+    <div class="RowItem">
+      <h3 class="RowName">Nº Total de Coutas</h3>
+      <input disabled id="RS_response" placeholder="{{ RA_ToCo }}" />
+    </div>
+  </div>
+  <div class="RESBlock">
+    <h1 class="BlockTitle">Indicadores de Rentabilidad</h1>
+    <div class="RowItem">
+      <h3 class="RowName">TCEA Flujo Bruto</h3>
+      <input disabled id="RS_response" placeholder="{{ TCEA_Bruto }}" />
+    </div>
+    <div class="RowItem">
+      <h3 class="RowName">TCEA Flujo Neto</h3>
+      <input disabled id="RS_response" placeholder="{{ TCEA_Neto }}" />
+    </div>
+    <div class="RowItem">
+      <h3 class="RowName">VAN Flujo Bruto</h3>
+      <input disabled id="RS_response" placeholder="{{ VAN_Bruto }}" />
+    </div>
+    <div class="RowItem">
+      <h3 class="RowName">VAN Flujo Neto</h3>
+      <input disabled id="RS_response" placeholder="{{ VAN_Neto }}" />
+    </div>
+  </div>
+</section>
+
+<section class="leasingTable mat-elevation-z8" tabindex="0">
+  <table mat-table class="mat-elevation-z8" [dataSource]="dataSource">
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+    <!-- Position Column -->
+    <ng-container matColumnDef="nCuota">
+      <th mat-header-cell *matHeaderCellDef>Nº</th>
+      <td mat-cell *matCellDef="let element">{{ element.nCuota }}</td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="RC_SaldIni">
+      <th mat-header-cell *matHeaderCellDef>SaldoInicial</th>
+      <td mat-cell *matCellDef="let element">{{ element.RC_SaldIni }}</td>
+    </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="RC_Interes">
+      <th mat-header-cell *matHeaderCellDef>Interes</th>
+      <td mat-cell *matCellDef="let element">{{ element.RC_Interes }}</td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="RC_Cuota">
+      <th mat-header-cell *matHeaderCellDef>Cuota</th>
+      <td mat-cell *matCellDef="let element">{{ element.RC_Cuota }}</td>
+    </ng-container>
+    <ng-container matColumnDef="RC_Amort">
+      <th mat-header-cell *matHeaderCellDef>Amortizacion</th>
+      <td mat-cell *matCellDef="let element">{{ element.RC_Amort }}</td>
+    </ng-container>
+    <ng-container matColumnDef="RC_SegRsk">
+      <th mat-header-cell *matHeaderCellDef>SeguroRiesgo</th>
+      <td mat-cell *matCellDef="let element">{{ element.RC_SegRsk }}</td>
+    </ng-container>
+    <ng-container matColumnDef="RC_CostPer">
+      <th mat-header-cell *matHeaderCellDef>CostoPeriodico</th>
+      <td mat-cell *matCellDef="let element">{{ element.RC_CostPer }}</td>
+    </ng-container>
+    <ng-container matColumnDef="RC_Recompra">
+      <th mat-header-cell *matHeaderCellDef>Recompra</th>
+      <td mat-cell *matCellDef="let element">{{ element.RC_Recompra }}</td>
+    </ng-container>
+    <ng-container matColumnDef="RC_SaldFin">
+      <th mat-header-cell *matHeaderCellDef>SaldoFinal</th>
+      <td mat-cell *matCellDef="let element">{{ element.RC_SaldFin }}</td>
+    </ng-container>
+    <ng-container matColumnDef="RC_Deprec">
+      <th mat-header-cell *matHeaderCellDef>Depreciacio</th>
+      <td mat-cell *matCellDef="let element">{{ element.RC_Deprec }}</td>
+    </ng-container>
+    <ng-container matColumnDef="RC_AhorrTrib">
+      <th mat-header-cell *matHeaderCellDef>AhorroTributario</th>
+      <td mat-cell *matCellDef="let element">{{ element.RC_AhorrTrib }}</td>
+    </ng-container>
+    <ng-container matColumnDef="RC_IGV">
+      <th mat-header-cell *matHeaderCellDef>IGV</th>
+      <td mat-cell *matCellDef="let element">{{ element.RC_IGV }}</td>
+    </ng-container>
+    <ng-container matColumnDef="RC_FlujBruto">
+      <th mat-header-cell *matHeaderCellDef>FlujoBruto</th>
+      <td mat-cell *matCellDef="let element">{{ element.RC_FlujBruto }}</td>
+    </ng-container>
+    <ng-container matColumnDef="RC_FlujIGV">
+      <th mat-header-cell *matHeaderCellDef>FlujoIGV</th>
+      <td mat-cell *matCellDef="let element">{{ element.RC_FlujIGV }}</td>
+    </ng-container>
+    <ng-container matColumnDef="RC_FlujNeto">
+      <th mat-header-cell *matHeaderCellDef>FlujoNeto</th>
+      <td mat-cell *matCellDef="let element">{{ element.RC_FlujNeto }}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</section>

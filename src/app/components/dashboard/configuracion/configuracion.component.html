@@ -1,37 +1,157 @@
-
-
-
-
-<mat-toolbar color="secondary">Consultas previas</mat-toolbar>
-
-<mat-table #table [dataSource]="dataSource" matSort *ngIf="dataSource.length > 0">
-	<ng-container matColumnDef="Fecha">
-		<mat-header-cell *matHeaderCellDef mat-sort-header>Fecha </mat-header-cell>
-		<mat-cell *matCellDef="let element"> {{element.Fecha}} </mat-cell>
-	</ng-container>
-
-
-	<ng-container matColumnDef="Precio">
-		<mat-header-cell *matHeaderCellDef mat-sort-header>Precio </mat-header-cell>
-		<mat-cell *matCellDef="let element"> {{element.Precio}} </mat-cell>
-	</ng-container>
-    
-	<ng-container matColumnDef="Tiempo">
-		<mat-header-cell *matHeaderCellDef mat-sort-header>Tiempo </mat-header-cell>
-		<mat-cell *matCellDef="let element"> {{element.Tiempo}} </mat-cell>
-	</ng-container>
-
-    <ng-container matColumnDef="Tasa">
-		<mat-header-cell *matHeaderCellDef mat-sort-header>Tasa </mat-header-cell>
-		<mat-cell *matCellDef="let element"> {{element.Tasa}} </mat-cell>
-	</ng-container>
-
-    
-
-
-	<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-	<mat-row *matRowDef="let row; columns: displayedColumns;" (click)="row.toggle(row)">
-	</mat-row>
-</mat-table>
-
-<div *ngIf="dataSource.length === 0">No data</div>
+<form [formGroup]="leasingForm">
+  <section class="RESSection">
+    <div class="RESBlock">
+      <h2 class="RowTitle">Valor del Bien</h2>
+      <div class="RowItem">
+        <h3 class="RowName">Precio de venta</h3>
+        <input type="number" matInput id="VB_PeVnt" formControlName="_VB_PeVnt" />
+      </div>
+      <div class="RowItem">
+        <h3 class="RowName">Cuota Inicial</h3>
+        <input type="number" matInput id="VB_CoIni" formControlName="_VB_CoIni" />
+      </div>
+      <div class="RowItem">
+        <h3 class="RowName">% de Recompra</h3>
+        <input type="number" matInput id="VB_PcRcp" formControlName="_VB_PcRcp" />
+      </div>
+    </div>
+    <div class="RESBlock">
+      <h2 class="RowTitle">Plazos de Pago</h2>
+      <div class="RowItem">
+        <h3 class="RowName">Numero de Años</h3>
+        <input type="number" matInput id="PP_NmAns" formControlName="_PP_NmAns" />
+      </div>
+      <div class="RowItem">
+        <h3 class="RowName">Frecuencia de Pago</h3>
+        <input type="number" matInput id="PP_FqPag" formControlName="_PP_FqPag" />
+      </div>
+      <div class="RowItem">
+        <h3 class="RowName">Nº dias por año</h3>
+        <select name="PP_NmDxA" id="PP_NmDxA" formControlName="_PP_NmDxA">
+          <option value="360">360 dias</option>
+          <option value="365">365 dias</option>
+        </select>
+      </div>
+      <div class="RowItem">
+        <h3 class="RowName">Tipo de Periodo de Gracia</h3>
+        <select name="PP_Grcia" id="PP_Grcia" formControlName="_PP_Grcia">
+          <option value="1">No hay</option>
+          <option value="2">Parcial</option>
+          <option value="3">Total</option>
+        </select>
+      </div>
+      <div class="RowItem">
+        <h3 class="RowName">Duracion Periodo de Gracia</h3>
+        <input type="number" matInput id="PP_PrGrc" formControlName="_PP_PrGrc" />
+      </div>
+    </div>
+  </section>
+  <section class="RESSection">
+    <div class="RESBlock">
+      <h2 class="RowTitle">Tasas</h2>
+      <div class="RowItem">
+        <h3 class="RowName">Tipo de Tasa</h3>
+        <select name="TX_TpInt" id="TX_TpInt" formControlName="_TX_TpInt">
+          <option value="1">Tasa Efectiva</option>
+          <option value="2">Tasa Nominal</option>
+        </select>
+      </div>
+      <div class="RowItem">
+        <h3 class="RowName">Tasa de Interes</h3>
+        <input type="number" matInput id="TX_PcInt" formControlName="_TX_PcInt" />
+      </div>
+      <div class="RowItem">
+        <h3 class="RowName">Periodo de Tasa de Interes</h3>
+        <input type="number" matInput id="TX_PdInt" formControlName="_TX_PdInt" />
+      </div>
+      <div class="RowItem">
+        <h3 class="RowName">Capitalizacion de Tasa de Interes</h3>
+        <input type="number" matInput id="TX_CaInt" formControlName="_TX_CaInt" />
+      </div>
+      <div class="RowItem">
+        <h3 class="RowName">Tasa de Desc. Ks</h3>
+        <input type="number" matInput id="TX_DscKs" formControlName="_TX_DscKs" />
+      </div>
+      <div class="RowItem">
+        <h3 class="RowName">Tasa de Desc. WACC</h3>
+        <input type="number" matInput id="TX_DscWC" formControlName="_TX_DscWC" />
+      </div>
+    </div>
+    <div class="RESBlock">
+      <h2 class="RowTitle">Pagos Porcentuales</h2>
+      <div class="RowItem">
+        <h3 class="RowName">Comision de Activacion</h3>
+        <input type="number" matInput id="PC_CmAct" formControlName="_PC_CmAct" />
+      </div>
+      <div class="RowItem">
+        <h3 class="RowName">Seguro de Riesgo</h3>
+        <input type="number" matInput id="PC_PcRsk" formControlName="_PC_PcRsk" />
+      </div>
+      <div class="RowItem">
+        <h3 class="RowName">IGV</h3>
+        <input type="number" matInput id="PC_PcIGV" formControlName="_PC_PcIGV" />
+      </div>
+      <div class="RowItem">
+        <h3 class="RowName">Impuesto de la Renta</h3>
+        <input type="number" matInput id="PC_PcIRt" formControlName="_PC_PcIRt" />
+      </div>
+    </div>
+  </section>
+  <section class="RESSection">
+    <div class="RESBlock">
+      <h2 class="RowTitle">Pagos Iniciales</h2>
+      <div class="RowTableOrg">
+        <h3 class="CatName">Concepto</h3>
+        <input type="text" matInput id="PI_nm" #PI_nm />
+        <h3 class="CatName">Monto</h3>
+        <input type="number" matInput id="PI_cst" #PI_cst />
+      </div>
+      <div class="RowTableOrg">
+        <button (click)="addIniData()">Agregar</button>
+        <button (click)="removeIniData()">Borrar Ultimo</button>
+      </div>
+      <table mat-table class="mat-elevation-z8" [dataSource]="InidataSource" #IniTable>
+        <tr mat-header-row *matHeaderRowDef="PagoIniColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: PagoIniColumns"></tr>
+        <ng-container matColumnDef="PI_nm">
+          <th mat-header-cell *matHeaderCellDef>Concepto</th>
+          <td mat-cell *matCellDef="let element">{{ element.PI_nm }}</td>
+        </ng-container>
+        <ng-container matColumnDef="PI_cst">
+          <th mat-header-cell *matHeaderCellDef>Monto</th>
+          <td mat-cell *matCellDef="let element">{{ element.PI_cst }}</td>
+        </ng-container>
+      </table>
+    </div>
+    <div class="RESBlock">
+      <h2 class="RowTitle">Pagos Periodicos</h2>
+      <div class="RowTableOrg">
+        <h3 class="CatName">Concepto</h3>
+        <input type="text" matInput id="PP_nm" #PP_nm />
+        <h3 class="CatName">Monto</h3>
+        <input type="number" matInput id="PP_cst" #PP_cst />
+      </div>
+      <div class="RowTableOrg">
+        <button (click)="addPerData()">Agregar</button>
+        <button (click)="removePerData()">Borrar Ultimo</button>
+      </div>
+      <table mat-table class="mat-elevation-z8" [dataSource]="PerdataSource" #PerTable>
+        <tr mat-header-row *matHeaderRowDef="PagoPerColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: PagoPerColumns"></tr>
+        <ng-container matColumnDef="PP_nm">
+          <th mat-header-cell *matHeaderCellDef>Concepto</th>
+          <td mat-cell *matCellDef="let element">{{ element.PP_nm }}</td>
+        </ng-container>
+        <ng-container matColumnDef="PP_cst">
+          <th mat-header-cell *matHeaderCellDef>Monto</th>
+          <td mat-cell *matCellDef="let element">{{ element.PP_cst }}</td>
+        </ng-container>
+      </table>
+    </div>
+  </section>
+  <section class="ButtonSection">
+    <button type="button" id="CalcularButton" (click)="CalcularLeasing()">
+      <p>Calcular!</p>
+    </button>
+  </section>
+</form>
