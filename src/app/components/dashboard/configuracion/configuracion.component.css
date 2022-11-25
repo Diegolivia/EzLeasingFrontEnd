@@ -79,8 +79,10 @@ h3 {
   font-size: 30px;
   line-height: 29px;
   text-align: center;
-  color: #000000;
+  background-color: #f0f7fb;
+  border: 4px solid #7ac3f8;
   padding: 1%;
+  border-radius: 36px;
 }
 
 .BlockTitle {

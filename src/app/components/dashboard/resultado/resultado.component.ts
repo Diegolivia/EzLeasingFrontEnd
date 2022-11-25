@@ -81,9 +81,10 @@ export class ResultadoComponent implements OnInit {
     this.loadLeasing();
   }
   loadLeasing() {
-    const url = 'http://152.67.43.35:3000/api/leasing_nosave/aleman';
-    //const url = 'http://localhost:8080/api/leasing_nosave/aleman';
-    const body = this.messageService.currmessage;
+    //const url = 'http://152.67.43.35:3000/api/leasing_nosave/aleman';
+    const url = 'http://localhost:8080/api/leasing_nosave/aleman';
+    const body = this.messageService.get()
+    console.log("Body Sent")
     console.log(body)
     const headers = new Headers({
       'Content-Type': 'application/json',
@@ -110,7 +111,7 @@ export class ResultadoComponent implements OnInit {
       })
       .catch((e) => {
         console.log(e);
-        this.dataSource = LEASING_DATA;
+        //this.dataSource = LEASING_DATA;
       });
   }
 }

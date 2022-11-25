@@ -1,9 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { MatTable } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { LeasingData, PagoIniCustom, PagoPerCustom } from '../../Leasingdata';
-import { LeasingDataService } from '../../leasingdata.service';
 import { MessageService } from '../../message.service';
 
 const PagoInitDATA: PagoIniCustom[] = [
@@ -139,15 +138,14 @@ export class ConfiguracionComponent implements OnInit {
     this.Ldata.PC_PcIGV = Number(this.leasingForm.get('_PC_PcIGV')?.value);
     this.Ldata.PC_PcIRt = Number(this.leasingForm.get('_PC_PcIRt')?.value);
   }
-  GrabTableData(){
-    this.Ldata.PX_PgIni=this.InidataSource
-    this.Ldata.PX_PgPer=this.PerdataSource
+  GrabTableData() {
+    this.Ldata.PX_PgIni = this.InidataSource;
+    this.Ldata.PX_PgPer = this.PerdataSource;
   }
 
   CalcularLeasing() {
     this.GrabFormData();
     this.GrabTableData();
-    console.log(this.Ldata)
     this.messageService.add(this.Ldata);
     this.router.navigate(['/dashboard/resultado']);
   }
