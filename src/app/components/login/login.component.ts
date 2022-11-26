@@ -28,10 +28,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   ingresar() {
-    console.log(this.form);
     const usuario = this.form.value.usuario;
     const password = this.form.value.password;
     const url = environment.apiURL + '/api/auth/login';
+    console.log(url)
     const body = {
       username: usuario,
       password: password,
